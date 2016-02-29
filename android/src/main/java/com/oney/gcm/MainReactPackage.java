@@ -11,10 +11,10 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.modules.fresco.FrescoModule;
 import com.facebook.react.modules.intent.IntentModule;
 import com.facebook.react.modules.location.LocationModule;
-//import com.facebook.react.modules.netinfo.NetInfoModule;
+import com.facebook.react.modules.netinfo.NetInfoModule;
 import com.facebook.react.modules.network.NetworkingModule;
 import com.facebook.react.modules.storage.AsyncStorageModule;
-//import com.facebook.react.modules.toast.ToastModule;
+import com.facebook.react.modules.toast.ToastModule;
 import com.facebook.react.modules.websocket.WebSocketModule;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.views.drawer.ReactDrawerLayoutManager;
@@ -33,7 +33,7 @@ import com.facebook.react.views.toolbar.ReactToolbarManager;
 import com.facebook.react.views.view.ReactViewManager;
 import com.facebook.react.views.viewpager.ReactViewPagerManager;
 import com.facebook.react.views.webview.ReactWebViewManager;
-//import com.facebook.react.modules.clipboard.ClipboardModule;
+import com.facebook.react.modules.clipboard.ClipboardModule;
 
 /**
  * Package defining basic modules and view managers.
@@ -44,14 +44,14 @@ public class MainReactPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(
                 new AsyncStorageModule(reactContext),
-//                new ClipboardModule(reactContext),
+                new ClipboardModule(reactContext),
                 new FrescoModule(reactContext),
                 new IntentModule(reactContext),
                 new LocationModule(reactContext),
                 new NetworkingModule(reactContext),
-//                new NetInfoModule(reactContext),
-                new WebSocketModule(reactContext));
-//                new ToastModule(reactContext));
+                new NetInfoModule(reactContext),
+                new WebSocketModule(reactContext),
+                new ToastModule(reactContext));
     }
 
     @Override
